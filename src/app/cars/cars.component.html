@@ -1,0 +1,4 @@
+
+<app-add-car (addCar)="addCar($event)"></app-add-car>
+
+<app-car *ngFor="let carItem of cars; let idx = index" [car]="carItem"></app-car>
