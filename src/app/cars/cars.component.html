@@ -1,4 +1,6 @@
 
 <app-add-car (addCar)="addCar($event)"></app-add-car>
 
-<app-car *ngFor="let carItem of cars; let idx = index" [car]="carItem"></app-car>
+<app-car *ngFor="let carItem of cars; let idx = index" [car]="carItem">
+  <h1 appTextColor #headerContent>Header content:  {{ get() }}</h1>
+</app-car>

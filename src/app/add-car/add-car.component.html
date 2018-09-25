@@ -1,3 +1,5 @@
-<input type="text" [(ngModel)]="name">
-<input type="number" [(ngModel)]="year">
-<button type="button" (click)="addEventEmit()">Add car</button>
+<input type="text" #labelName>
+<!--<input type="text" [(ngModel)]="name">-->
+<!--<input type="number" [(ngModel)]="year">-->
+<input type="number" #labelYear>
+<button type="button" (click)="addEventEmit(labelName)">Add car</button>

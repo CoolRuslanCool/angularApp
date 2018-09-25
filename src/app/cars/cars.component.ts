@@ -7,17 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
+  name: string;
+
   cars: { name: string; year: number }[] = [
     {name: 'Ford', year: 2015},
     {name: 'Opel', year: 2017},
     {name: 'Mazda', year: 2013}
   ];
 
-  constructor() { }
+  constructor() {
+    this.name = 'constructor name';
+  }
 
   ngOnInit() {
   }
 
+  get() {
+    console.log('log before get name: ' + this.name);
+    return this.name;
+  }
   addCar(car) {
     this.cars.push(car);
   }
