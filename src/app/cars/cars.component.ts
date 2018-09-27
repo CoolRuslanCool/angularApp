@@ -23,7 +23,6 @@ export class CarsComponent implements OnInit {
   }
 
   get() {
-    console.log('log before get name: ' + this.name);
     return this.name;
   }
   addCar(car) {
