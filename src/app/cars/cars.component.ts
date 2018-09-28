@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {of} from 'rxjs';
+import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-cars',
@@ -8,14 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class CarsComponent implements OnInit {
 
   searchName = '';
-  name: string;
+  carsHeader = of('HHHHeader').pipe(delay(3000));
 
+  name: string;
   cars: { name: string; year: number }[] = [
     {name: 'Ford', year: 2015},
     {name: 'Opel', year: 2017},
     {name: 'Mazda', year: 2013}
   ];
   number: number;
+
   nums = [1, 2, 3];
 
   constructor() {
@@ -32,6 +36,7 @@ export class CarsComponent implements OnInit {
   get() {
     return this.name;
   }
+
   addCar(car) {
     this.cars.push(car);
   }
