@@ -8,6 +8,7 @@ import { CarComponent } from './car/car.component';
 import { CarsComponent } from './cars/cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { TextColorDirective } from './directives/text-color.directive';
+import { AddTextPipe } from './add-text.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TextColorDirective } from './directives/text-color.directive';
     CarComponent,
     CarsComponent,
     AddCarComponent,
-    TextColorDirective
+    TextColorDirective,
+    AddTextPipe
   ],
   imports: [
     BrowserModule,

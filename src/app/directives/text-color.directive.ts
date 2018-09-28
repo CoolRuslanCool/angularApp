@@ -1,9 +1,28 @@
-import {Directive, ElementRef, OnInit, Renderer2, HostBinding, HostListener} from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  HostBinding,
+  HostListener,
+  Input,
+  ApplicationRef
+} from '@angular/core';
+import Log from '../app-logger-util';
 
 @Directive({
+  host: {'(mouseenter)': 'colorChange()'},
   selector: '[appTextColor]'
 })
 export class TextColorDirective implements OnInit {
+
+  number: number;
+
+  @Input()
+  directiveParam: string;
+
+  @Input('appTextColor')
+  private appColor: {col1: string, col2: string};
 
   @HostBinding('style.color')
   private color: string;
@@ -19,14 +38,18 @@ export class TextColorDirective implements OnInit {
     // style.backgroundColor = 'darkcyan';
   }
 
-  @HostListener('mouseenter', ['$event'])
-  colorChange(event: Event) {
-    this.color = 'red';
+  // @HostListener('mouseenter', ['$event'])
+  // colorChange(event: Event) {
+  //   this.color = this.appColor.col1;
+  // }
+  colorChange() {
+    this.color = this.appColor.col1;
   }
 
   @HostListener('mouseleave', ['$event'])
   colorReset(event: Event) {
-    this.color = 'black';
+    Log(this.directiveParam);
+    this.color = this.appColor.col2;
   }
 
 

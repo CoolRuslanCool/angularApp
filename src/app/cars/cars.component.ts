@@ -14,12 +14,18 @@ export class CarsComponent implements OnInit {
     {name: 'Opel', year: 2017},
     {name: 'Mazda', year: 2013}
   ];
+  number: number;
+  nums = [1, 2, 3, 4, 5, 6];
 
   constructor() {
     this.name = 'constructor name';
   }
 
   ngOnInit() {
+  }
+
+  setNumber(num: number) {
+    this.number = num;
   }
 
   get() {
