@@ -11,6 +11,7 @@ import { CarsComponent } from './cars/cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { TextColorDirective } from './directives/text-color.directive';
 import { AddTextPipe } from './add-text.pipe';
+import { CarFilterPipe } from './car-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddTextPipe } from './add-text.pipe';
     CarsComponent,
     AddCarComponent,
     TextColorDirective,
-    AddTextPipe
+    AddTextPipe,
+    CarFilterPipe
   ],
   imports: [
     BrowserModule,

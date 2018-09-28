@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent implements OnInit {
 
+  searchName = '';
   name: string;
 
   cars: { name: string; year: number }[] = [
