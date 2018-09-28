@@ -15,7 +15,7 @@ export class CarsComponent implements OnInit {
     {name: 'Mazda', year: 2013}
   ];
   number: number;
-  nums = [1, 2, 3, 4, 5, 6];
+  nums = [1, 2, 3];
 
   constructor() {
     this.name = 'constructor name';

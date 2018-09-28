@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { AlertModule } from 'ngx-bootstrap';
+
 import { AppComponent } from './app.component';
 import { MyComponent } from './my.component';
 import { CarComponent } from './car/car.component';
@@ -22,7 +24,8 @@ import { AddTextPipe } from './add-text.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [

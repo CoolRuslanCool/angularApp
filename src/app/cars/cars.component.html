@@ -1,23 +1,32 @@
+<div class="container" style="margin-top: 40px">
+  <div class="row col-6">
+    <app-add-car (addCar)="addCar($event)"></app-add-car>
 
-<app-add-car (addCar)="addCar($event)"></app-add-car>
+    <app-car *ngFor="let carItem of cars; let idx = index" [car]="carItem">
+      <h1
+        [appTextColor]="{col1: 'red', col2: 'blue'}"
+        #headerContent [directiveParam]="'Hi world'"
+      >
+        Header content: {{ get() }}
+      </h1>
+      <!--<h1 appTextColor="red" #headerContent [directiveParam]="'Hi world'">Header content:  {{ get() }}</h1>-->
 
-<app-car *ngFor="let carItem of cars; let idx = index" [car]="carItem">
-  <h1 [appTextColor]="{col1: 'red', col2: 'blue'}" #headerContent [directiveParam]="'Hi world'">Header content:  {{ get() }}</h1>
-  <!--<h1 appTextColor="red" #headerContent [directiveParam]="'Hi world'">Header content:  {{ get() }}</h1>-->
 
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let idx of nums" (click)="setNumber(idx)">
+          {{ idx | addText: 'my text pipe.' }}
+        </li>
+      </ul>
+      <div [ngSwitch]="number">
+        <p *ngSwitchCase="1">1</p>
+        <p *ngSwitchCase="2">2</p>
+        <p *ngSwitchDefault>def</p>
+      </div>
 
-  <ul>
-    <li *ngFor="let idx of nums" (click)="setNumber(idx)">
-      {{ idx | addText: 'my text pipe.' }}
-    </li>
-  </ul>
-  <div [ngSwitch]="number">
-    <p *ngSwitchCase="1">1</p>
-    <p *ngSwitchCase="2">2</p>
-    <p *ngSwitchCase="3">3</p>
-    <p *ngSwitchCase="4">4</p>
-    <p *ngSwitchCase="5">5</p>
-    <p *ngSwitchDefault>def</p>
+      <div class="alert alert-success">
+        <strong>Success!</strong> Indicates a successful or positive action.
+      </div>
+
+    </app-car>
   </div>
-
-</app-car>
+</div>
