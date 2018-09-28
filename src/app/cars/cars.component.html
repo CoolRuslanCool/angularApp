@@ -11,21 +11,24 @@
       Search car:
       <input type="text" [(ngModel)]="searchName">
     </label>
-    <app-car *ngFor="let carItem of cars | carFilter: searchName : 'name'; let idx = index" [car]="carItem">
-
-      <br>
-      <!--<h1 appTextColor="red" #headerContent [directiveParam]="'Hi world'">Header content:  {{ get() }}</h1>-->
-    </app-car>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let idx of nums" (click)="setNumber(idx)">
-        {{ idx | addText: 'my text pipe.' }}
+      <li class="list-group-item" *ngFor="let carItem of cars | carFilter: searchName : 'name'">
+        <app-car [car]="carItem">
+          <!--<app-car *ngFor="let carItem of cars | carFilter: searchName : 'name'; let idx = index" [car]="carItem">-->
+          <!--<h1 appTextColor="red" #headerContent [directiveParam]="'Hi world'">Header content:  {{ get() }}</h1>-->
+        </app-car>
       </li>
     </ul>
-    <div [ngSwitch]="number">
-      <p *ngSwitchCase="1">1</p>
-      <p *ngSwitchCase="2">2</p>
-      <p *ngSwitchDefault>def</p>
-    </div>
+    <!--<ul class="list-group">-->
+      <!--<li class="list-group-item" *ngFor="let idx of nums" (click)="setNumber(idx)">-->
+        <!--{{ idx | addText: 'my text pipe.' }}-->
+      <!--</li>-->
+    <!--</ul>-->
+    <!--<div [ngSwitch]="number">-->
+      <!--<p *ngSwitchCase="1">1</p>-->
+      <!--<p *ngSwitchCase="2">2</p>-->
+      <!--<p *ngSwitchDefault>def</p>-->
+    <!--</div>-->
     <div class="alert alert-success">
       <strong>Success!</strong> Indicates a successful or positive action.
     </div>
