@@ -15,6 +15,7 @@ import { CarFilterPipe } from './car-filter.pipe';
 import { CarShopComponent } from './car-shop/car-shop.component';
 import { AddNewCarComponent } from './add-new-car/add-new-car.component';
 import {Logger} from './services/app-logger-util';
+import { FormValidateComponent } from './form-validate/form-validate.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {Logger} from './services/app-logger-util';
     AddTextPipe,
     CarFilterPipe,
     CarShopComponent,
-    AddNewCarComponent
+    AddNewCarComponent,
+    FormValidateComponent
   ],
   imports: [
     BrowserModule,

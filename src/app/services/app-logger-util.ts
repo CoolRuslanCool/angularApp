@@ -1,6 +1,6 @@
 export class Logger {
 
-  log(data: string) {
+  log(data: any) {
     console.log(data);
   }
 
