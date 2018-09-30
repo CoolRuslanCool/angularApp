@@ -10,10 +10,11 @@ export class CarComponent implements OnInit, AfterViewInit {
   // name: 'refName';
 
   @Input()
-  car: {name: string, year: number};
-  @ContentChild
-  ('headerContent')
-  header: ElementRef;
+  car: {name: string, sold: boolean};
+
+  // @ContentChild
+  // ('headerContent')
+  // header: ElementRef;
 
   constructor() { }
 
@@ -21,8 +22,17 @@ export class CarComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.header);
+    // console.log(this.header);
     // console.log(this.header.nativeElement.innerText);
+  }
+
+  changeStatus(event: string) {
+    if (event === 'sell') {
+      this.car.sold = true;
+    }
+    if (event === 'return') {
+      this.car.sold = false;
+    }
   }
 
 }

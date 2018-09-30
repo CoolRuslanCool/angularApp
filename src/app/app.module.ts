@@ -10,8 +10,10 @@ import { CarComponent } from './car/car.component';
 import { CarsComponent } from './cars/cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { TextColorDirective } from './directives/text-color.directive';
-import { AddTextPipe } from './add-text.pipe';
+import { AddTextPipe } from './services/add-text.pipe';
 import { CarFilterPipe } from './car-filter.pipe';
+import { CarShopComponent } from './car-shop/car-shop.component';
+import { AddNewCarComponent } from './add-new-car/add-new-car.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CarFilterPipe } from './car-filter.pipe';
     AddCarComponent,
     TextColorDirective,
     AddTextPipe,
-    CarFilterPipe
+    CarFilterPipe,
+    CarShopComponent,
+    AddNewCarComponent
   ],
   imports: [
     BrowserModule,

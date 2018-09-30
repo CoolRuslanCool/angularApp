@@ -1,5 +1,9 @@
 <!--<ng-content></ng-content>-->
 
-<p>
-  Name: {{ car.name }}, year: {{ car.year }}.
-</p>
+<div [ngClass]="!car.sold ? 'list-group-item-success' : 'list-group-item-warning'">
+  <p>
+    Name: {{ car.name }}. Year: -{{ car.sold}}-.
+  </p>
+  <button [disabled]="car.sold" class="btn btn-success" (click)="changeStatus('sell')">Buy</button>
+  <button [disabled]="!car.sold" class="btn btn-danger" (click)="changeStatus('return')">Return</button>
+</div>

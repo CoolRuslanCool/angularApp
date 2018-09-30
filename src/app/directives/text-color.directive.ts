@@ -8,7 +8,7 @@ import {
   Input,
   ApplicationRef
 } from '@angular/core';
-import Log from '../app-logger-util';
+import {Logger} from '../services/app-logger-util';
 
 @Directive({
   host: {'(mouseenter)': 'colorChange()'},
@@ -27,7 +27,7 @@ export class TextColorDirective implements OnInit {
   @HostBinding('style.color')
   private color: string;
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {}
+  constructor(private element: ElementRef, private renderer: Renderer2, private logger: Logger) {}
 
   ngOnInit(): void {
     // const nativeElement = this.element.nativeElement;
@@ -48,7 +48,7 @@ export class TextColorDirective implements OnInit {
 
   @HostListener('mouseleave', ['$event'])
   colorReset(event: Event) {
-    Log(this.directiveParam);
+    this.logger.log(this.directiveParam);
     this.color = this.appColor.col2;
   }
 
