@@ -14,6 +14,7 @@ import { AddTextPipe } from './services/add-text.pipe';
 import { CarFilterPipe } from './car-filter.pipe';
 import { CarShopComponent } from './car-shop/car-shop.component';
 import { AddNewCarComponent } from './add-new-car/add-new-car.component';
+import {Logger} from './services/app-logger-util';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { AddNewCarComponent } from './add-new-car/add-new-car.component';
     FormsModule,
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    Logger
+  ],
   bootstrap: [
     AppComponent
   ]
