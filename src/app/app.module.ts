@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AlertModule } from 'ngx-bootstrap';
 
@@ -16,6 +16,7 @@ import { CarShopComponent } from './car-shop/car-shop.component';
 import { AddNewCarComponent } from './add-new-car/add-new-car.component';
 import {Logger} from './services/app-logger-util';
 import { FormValidateComponent } from './form-validate/form-validate.component';
+import { ReactiveFormValidateComponent } from './reactive-form-validate/reactive-form-validate.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +30,13 @@ import { FormValidateComponent } from './form-validate/form-validate.component';
     CarFilterPipe,
     CarShopComponent,
     AddNewCarComponent,
-    FormValidateComponent
+    FormValidateComponent,
+    ReactiveFormValidateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AlertModule.forRoot()
   ],
   providers: [
