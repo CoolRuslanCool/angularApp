@@ -56,10 +56,13 @@ export class CarsComponent implements OnInit {
   }
 
   getCars() {
-    this.carService.getCars().subscribe((response: { name: string; sold: boolean }[]) => {
-      // this.logger.log(response);
-      this.cars2 = response;
-    });
+    this.carService.getCars().subscribe(
+      (response: { name: string; sold: boolean }[]) => {
+        // this.logger.log(response);
+        this.cars2 = response;
+      },
+      error => this.logger.log(error)
+    );
   }
 
   addCarServ() {
