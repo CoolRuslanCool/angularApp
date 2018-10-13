@@ -17,6 +17,7 @@ import { AddNewCarComponent } from './add-new-car/add-new-car.component';
 import {Logger} from './services/app-logger-util';
 import { FormValidateComponent } from './form-validate/form-validate.component';
 import { ReactiveFormValidateComponent } from './reactive-form-validate/reactive-form-validate.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ReactiveFormValidateComponent } from './reactive-form-validate/reactive
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AlertModule.forRoot()
   ],

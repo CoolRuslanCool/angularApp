@@ -1,11 +1,13 @@
 import {Logger} from './app-logger-util';
 import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Car} from '../cars/cars.component';
 
 @Injectable()
 export class CarService {
 
 
-  constructor(private logger: Logger) {
+  constructor(private logger: Logger, private http: HttpClient) {
   }
 
   cars = [
@@ -16,12 +18,24 @@ export class CarService {
     ];
 
   addCar(name: string) {
-    this.cars.push({name, sold: false});
-    this.logger.log(`Add car: ${name}.`);
+    // this.cars.push({name, sold: false});
+    // this.logger.log(`Add car: ${name}.`);
+    return this.http.post('http://localhost:3004/cars', { name, sold: false});
   }
 
-  deleteCar(name: string) {
-    this.cars = this.cars.filter(car => car.name !== name);
+  deleteCar(id: number) {
+    // this.cars = this.cars.filter(car => car.name !== name);
+    return this.http.delete(`http://localhost:3004/cars/${id}`);
+  }
+
+  // http
+  getCars() {
+    return this.http.get('http://localhost:3004/cars');
+  }
+
+  updateName(carItem: Car, name: string) {
+    carItem.name = name;
+    return this.http.put(`http://localhost:3004/cars/${carItem.id}`, carItem);
   }
 
 }

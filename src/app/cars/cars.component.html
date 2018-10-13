@@ -4,7 +4,8 @@
     <app-add-car (addCar)="addCar($event)"></app-add-car>
     <h1
       [appTextColor]="{col1: 'red', col2: 'blue'}"
-      #headerContent [directiveParam]="'Hi world'"
+      #headerContent
+      [directiveParam]="'Hi world'"
     >
       Header content: {{ get() }}
     </h1>
@@ -12,12 +13,22 @@
       Search car:
       <input type="text" [(ngModel)]="searchName">
     </label>
+    <hr>
+    <input type="text" [(ngModel)]="carServName" class="form-control">
+    <button type="button" (click)="addCarServ()">Add car to serv</button>
+    <hr>
+    <button class="btn btn-success" type="button" (click)="getCars()">Get Cars</button>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let carItem of cars | carFilter: searchName : 'name'">
+      <li class="list-group-item" *ngFor="let carItem of cars2 | carFilter: searchName : 'name'">
         <app-car [car]="carItem">
           <!--<app-car *ngFor="let carItem of cars | carFilter: searchName : 'name'; let idx = index" [car]="carItem">-->
           <!--<h1 appTextColor="red" #headerContent [directiveParam]="'Hi world'">Header content:  {{ get() }}</h1>-->
         </app-car>
+        <hr>
+        <input type="text" [(ngModel)]="carServNameChange" class="form-control">
+        <button class="btn-success btn" type="button" (click)="updateCarNameServ(carItem)">Update carName to serv</button>
+        <button class="btn-danger btn" type="button" (click)="deleteCarServ(carItem.id)">Delete</button>
+        <hr>
       </li>
     </ul>
     <!--<ul class="list-group">-->
