@@ -1,6 +1,6 @@
 import {Logger} from './app-logger-util';
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Car} from '../cars/cars.component';
 
 @Injectable()
@@ -30,7 +30,11 @@ export class CarService {
 
   // http
   getCars() {
-    return this.http.get('http://localhost:3004/cars');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf8',
+      'MyHeader': 'Hello'
+    });
+    return this.http.get('http://localhost:3004/cars', { headers });
   }
 
   updateName(carItem: Car, name: string) {
