@@ -19,6 +19,7 @@ export class CarsComponent implements OnInit {
 
   searchName = '';
   carsHeader = of('HHHHeader').pipe(delay(3000));
+  carServiceHeader: string;
   carServName = '';
   carServNameChange = '';
 
@@ -28,7 +29,8 @@ export class CarsComponent implements OnInit {
     {name: 'Opel', year: 2017},
     {name: 'Mazda', year: 2013}
   ];
-  cars2: { name: string; sold: boolean }[] = [];
+  cars2: any;
+  // cars2: { name: string; sold: boolean; id: number }[] = [];
 
   carsFromService = [];
 
@@ -41,6 +43,7 @@ export class CarsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.carServiceHeader = this.carService.getHeader('RU');
   }
 
   setNumber(num: number) {
@@ -56,18 +59,19 @@ export class CarsComponent implements OnInit {
   }
 
   getCars() {
-    this.carService.getCars().subscribe(
-      (response: { name: string; sold: boolean }[]) => {
-        // this.logger.log(response);
-        this.cars2 = response;
-      },
-      error => this.logger.log(error)
-    );
+    this.cars2 = this.carService.getCars();
+    // this.carService.getCars().subscribe(
+    //   (response: { name: string; sold: boolean; id: number }[]) => {
+    //     // this.logger.log(response);
+    //     this.cars2 = response;
+    //   },
+    //   error => this.logger.log(error)
+    // );
   }
 
   addCarServ() {
     this.carService.addCar(this.carServName).subscribe(data => {
-      this.cars2 = [...this.cars2, {name: data['name'], sold: data['sold']}];
+      this.cars2 = [...this.cars2, {name: data['name'], sold: data['sold'], id: data['id']}];
     });
   }
 

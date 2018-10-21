@@ -19,7 +19,8 @@
     <hr>
     <button class="btn btn-success" type="button" (click)="getCars()">Get Cars</button>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let carItem of cars2 | carFilter: searchName : 'name'">
+      <li class="list-group-item" *ngFor="let carItem of cars2 | async">
+      <!--<li class="list-group-item" *ngFor="let carItem of cars2 | carFilter: searchName : 'name'">-->
         <app-car [car]="carItem">
           <!--<app-car *ngFor="let carItem of cars | carFilter: searchName : 'name'; let idx = index" [car]="carItem">-->
           <!--<h1 appTextColor="red" #headerContent [directiveParam]="'Hi world'">Header content:  {{ get() }}</h1>-->

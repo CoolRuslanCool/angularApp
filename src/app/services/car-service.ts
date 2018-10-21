@@ -34,7 +34,7 @@ export class CarService {
       'Content-Type': 'application/json; charset=utf8',
       'MyHeader': 'Hello'
     });
-    return this.http.get('http://localhost:3104/cars', { headers });
+    return this.http.get('http://localhost:3004/cars', { headers });
   }
 
   updateName(carItem: Car, name: string) {
@@ -42,4 +42,7 @@ export class CarService {
     return this.http.put(`http://localhost:3004/cars/${carItem.id}`, carItem);
   }
 
+  getHeader(lang: string) {
+    return this.http.get(`http://localhost:3004/headers`);
+  }
 }
