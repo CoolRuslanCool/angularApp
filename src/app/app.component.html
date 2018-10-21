@@ -25,5 +25,23 @@
   <!--<app-reactive-form-validate></app-reactive-form-validate>-->
 <!--</div>-->
 <h1>Home page</h1>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <button
+      class="btn btn-outline-success"
+      type="button"
+      routerLink="/page1"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+    >Page1</button>
+    <button
+      class="btn btn-outline-secondary"
+      type="button"
+      routerLink="/page2"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+    >Page2</button>
+  </form>
+</nav>
 <router-outlet></router-outlet>
 
