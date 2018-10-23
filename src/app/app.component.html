@@ -21,8 +21,8 @@
 <!--<app-cars></app-cars>-->
 <!--<app-car-shop></app-car-shop>-->
 <!--<div class="container">-->
-  <!--<app-form-validate></app-form-validate>-->
-  <!--<app-reactive-form-validate></app-reactive-form-validate>-->
+<!--<app-form-validate></app-form-validate>-->
+<!--<app-reactive-form-validate></app-reactive-form-validate>-->
 <!--</div>-->
 <h1>Home page</h1>
 <nav class="navbar navbar-light bg-light">
@@ -33,16 +33,25 @@
       routerLink="/page1"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{exact: true}"
-    >Page1</button>
+    >Page1
+    </button>
     <button
       class="btn btn-outline-secondary"
       type="button"
       routerLink="/page2"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{exact: true}"
-    >Page2</button>
+    >Page2
+    </button>
   </form>
 </nav>
 
 <button (click)="openPage1()">Open Page1</button>
+<a
+  [routerLink]="['/pageParams', 1, 'foo']"
+  [queryParams]="{par1: 'ppppp111', par2: 'wwwwwwwwww2'}"
+  fragment="fffffffffff"
+>Page params</a>
+<hr>
+<a (click)="forwardWithParams()">Forward with params</a>
 <router-outlet></router-outlet>

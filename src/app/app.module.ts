@@ -22,6 +22,7 @@ import {Page1Component} from './page1/page1.component';
 import {Page2Component} from './page2/page2.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PageParamComponent } from './page-param/page-param.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     ReactiveFormValidateComponent,
     Page1Component,
     Page2Component,
-    HomePageComponent
+    HomePageComponent,
+    PageParamComponent
   ],
   imports: [
     BrowserModule,
