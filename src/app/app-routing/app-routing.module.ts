@@ -7,11 +7,12 @@ import {HomePageComponent} from '../home-page/home-page.component';
 import {PageParamComponent} from '../page-param/page-param.component';
 import {InnerComponent} from '../inner/inner.component';
 import {ErrorPageComponent} from '../error-page/error-page.component';
+import {AuthGuardService} from '../services/auth-guard.service';
 
 const routes: Routes = [
   {
     path: 'page1', component: Page1Component,
-    children: [{path: ':param1/:param2', component: InnerComponent}]
+    children: [{path: ':param1/:param2', component: InnerComponent, canActivate: [AuthGuardService]}]
   },
   {path: 'page2', component: Page2Component},
   {path: 'pageParams/:id/:item', component: PageParamComponent},

@@ -25,6 +25,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PageParamComponent } from './page-param/page-param.component';
 import { InnerComponent } from './inner/inner.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import {LoginUserService} from './services/login-user.service';
+import {AuthGuardService} from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     AppRoutingModule
   ],
   providers: [
-    Logger
+    Logger,
+    LoginUserService,
+    AuthGuardService
   ],
   bootstrap: [
     AppComponent
