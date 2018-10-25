@@ -24,6 +24,7 @@ import {AppRoutingModule} from './app-routing/app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageParamComponent } from './page-param/page-param.component';
 import { InnerComponent } from './inner/inner.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { InnerComponent } from './inner/inner.component';
     Page2Component,
     HomePageComponent,
     PageParamComponent,
-    InnerComponent
+    InnerComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

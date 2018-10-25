@@ -6,6 +6,7 @@ import {Page2Component} from '../page2/page2.component';
 import {HomePageComponent} from '../home-page/home-page.component';
 import {PageParamComponent} from '../page-param/page-param.component';
 import {InnerComponent} from '../inner/inner.component';
+import {ErrorPageComponent} from '../error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,10 @@ const routes: Routes = [
   },
   {path: 'page2', component: Page2Component},
   {path: 'pageParams/:id/:item', component: PageParamComponent},
-  {path: '', component: HomePageComponent}
+  {path: '', component: HomePageComponent},
+  {path: 'error-page', component: ErrorPageComponent},
+  {path: '**', redirectTo: '/error-page'},
+  // {path: '**', component: ErrorPageComponent}
 ];
 
 @NgModule({
