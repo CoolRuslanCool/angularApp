@@ -23,6 +23,7 @@ import {Page2Component} from './page2/page2.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageParamComponent } from './page-param/page-param.component';
+import { InnerComponent } from './inner/inner.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PageParamComponent } from './page-param/page-param.component';
     Page1Component,
     Page2Component,
     HomePageComponent,
-    PageParamComponent
+    PageParamComponent,
+    InnerComponent
   ],
   imports: [
     BrowserModule,

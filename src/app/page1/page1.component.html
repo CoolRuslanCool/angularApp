@@ -1,3 +1,13 @@
-<p>
-  page1 works!
-</p>
+<div class="row">
+  <div class="col-6">
+    <p>
+      page1 works!
+    </p>
+    <a
+      routerLink="/page1/parameter1/parameter2"
+    >Inner with params</a>
+  </div>
+  <div class="col-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
